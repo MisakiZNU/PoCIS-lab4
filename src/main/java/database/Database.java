@@ -1,7 +1,6 @@
 package database;
 
 import java.sql.*;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class Database {
@@ -10,7 +9,7 @@ public class Database {
     try {
      connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/"+dbName, userName, password);
     } catch (SQLException e) {
-        throw e;
+        System.err.println("Помилка створення з'єднання з базою даних");
     }
     return connection;}
     public void closeConnection(){
